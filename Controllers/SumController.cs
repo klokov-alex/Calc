@@ -8,7 +8,7 @@ namespace Calc.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AddController : Controller
+    public class SumController : Controller
     {
         public IActionResult Index()
         {
