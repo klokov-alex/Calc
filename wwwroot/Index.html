@@ -3,13 +3,104 @@
 <head>
     <meta charset="utf-8" />
     <title>API calculator</title>
+    <style>
+
+    * {
+        box-sizing: border-box;
+      }
+        
+      html {
+        font: 1.2em/1.4 Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        padding: 0 0 1em;
+      }
+
+      header, footer {
+        background-color: #333;
+        color: #fff;
+        border: 5px solid #000;     
+        text-align: center;   
+      }
+
+      input, select, button {
+        font-size: xx-large;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 100%;
+      }
+
+      .result-area {
+          margin-left: 10px;
+      }
+
+      /* for screen resolution > 1000 px */
+      @media screen and (min-width: 1000px) {    
+      main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .calc-area {
+        display: grid;
+        grid-row: 1 ;
+        grid-column: 1;
+      }
+
+      .result-area {
+        display: grid;
+        grid-row: 1 ;
+        grid-column: 2 ;
+      }
+    }
+
+      
+
+    </style>    
+    
+
 </head>
 <body>
-    <h1>API Calculator</h1>
-    <p>Sum example: /api/sum?a=10&b=4</p>
-    <p>Subtract example: /api/subtract?a=10&b=4</p>
+    <header>
+        <h1>API Calculator</h1>
+        <p>Sum example: /api/sum?a=10&b=4</p>
+        <p>Subtract example: /api/subtract?a=10&b=4</p>
+    </header>
 
-    <h3>Results:</h3>
-    <p>here results will be displayed (under development)</p>
+    <main>
+        <div class="calc-area">
+            <form name="calcForm">
+                <div>                    
+                    <input type="number" id="A" placeholder="A" />                    
+                </div>
+                <div>                    
+                    <select id="operation">
+                        <option value="sum">+</option>
+                        <option value="subtract">-</option>
+                    </select>
+                </div>
+                <div>                    
+                    <input type="number" id="B" placeholder="B"/>                    
+                </div>
+                <div>
+                    <button type="submit" id="Submit">Calculate</button>
+                </div>
+                
+            </form>
+
+        </div>
+        <div class="result-area">
+            <h3>Results:</h3>
+            <div class="results"></div>
+        </div>
+
+    </main>
+    <footer>
+        <p>This app was built to test work with Web API</p>
+    </footer>
+    <script src="Script.js"></script>
+
+    
 </body>
 </html>
